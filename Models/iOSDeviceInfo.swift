@@ -10,6 +10,8 @@ import Foundation
 struct iOSDeviceInfo {
     var deviceName: String = "No Device Connected"
     var deviceModel: String = ""
+    var deviceIdentifier: String = ""  // Raw identifier like "iPhone11,8"
+    var deviceModelName: String = ""   // Friendly name like "iPhone XR"
     var deviceSerial: String = ""
     var osVersion: String = ""
     var isConnected: Bool = false

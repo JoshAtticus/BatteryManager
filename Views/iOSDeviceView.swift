@@ -132,10 +132,16 @@ struct iOSDeviceView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
                             
-                            if !deviceService.deviceInfo.deviceModel.isEmpty {
-                                Text(deviceService.deviceInfo.deviceModel)
+                            if !deviceService.deviceInfo.deviceModelName.isEmpty {
+                                Text(deviceService.deviceInfo.deviceModelName)
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
+                            }
+                            
+                            if !deviceService.deviceInfo.deviceIdentifier.isEmpty {
+                                Text(deviceService.deviceInfo.deviceIdentifier)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary.opacity(0.6))
                             }
                         }
                         .padding(.top)
@@ -339,6 +345,22 @@ struct iOSDeviceView: View {
                                 }
                                 
                                 VStack(spacing: 8) {
+                                    if !deviceService.deviceInfo.deviceModelName.isEmpty {
+                                        iOSDetailRow(
+                                            icon: "iphone",
+                                            label: "Model",
+                                            value: deviceService.deviceInfo.deviceModelName
+                                        )
+                                    }
+                                    
+                                    if !deviceService.deviceInfo.deviceIdentifier.isEmpty {
+                                        iOSDetailRow(
+                                            icon: "barcode",
+                                            label: "Identifier",
+                                            value: deviceService.deviceInfo.deviceIdentifier
+                                        )
+                                    }
+                                    
                                     if !deviceService.deviceInfo.osVersion.isEmpty {
                                         iOSDetailRow(
                                             icon: "apps.iphone",
