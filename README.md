@@ -4,21 +4,11 @@ A beautiful, native macOS app for monitoring battery health on **Mac computers**
 
 ## Requirements
 
-- macOS 12.0 or later
+- macOS 12.4 or later
 - For iOS device monitoring: **libimobiledevice** (installation instructions below)
 
-## Why is this better than coconutBattery?
-- Completely free
-- Subjectively better design
-- Cleaner layout
-- Widgets
-- 
-
 ## Installation
-
-### Install the App
-
-1. Download latest release from GitHub Releases
+### Get the latest release from [here](https://github.com/JoshAtticus/BatteryManager/releases/latest)
 
 ### Install libimobiledevice (for iOS Device features)
 
@@ -37,6 +27,11 @@ Verify installation:
 which ideviceinfo
 # Should output: /opt/homebrew/bin/ideviceinfo (or similar)
 ```
+## Why is this better than coconutBattery?
+- Completely free
+- Subjectively better design
+- Cleaner layout
+- Smaller size, less RAM usage
 
 ### Troubleshooting iOS Device Connection
 
@@ -66,55 +61,7 @@ If your iOS device is not detected:
    # Check battery info
    idevicediagnostics ioreg AppleSmartBattery
    ```
-
-## How It Works
-
-### Mac Battery Monitoring
-Uses macOS's `ioreg` command to access the `AppleSmartBattery` service:
-
-```bash
-ioreg -rw0 -c AppleSmartBattery
-```
-
-Provides comprehensive battery metrics including real-time voltage, current, temperature, capacity, health, and lifetime statistics.
-
-### iOS Device Monitoring
-Uses `libimobiledevice` to communicate with iOS devices over USB:
-1. Connects through `lockdownd` (device management daemon)
-2. Opens a diagnostics session
-3. Queries the `AppleSmartBattery` IORegistry on the iOS device
-4. Parses battery metrics similar to coconutBattery and 3uTools
-
-This is the same professional method used by commercial tools, in a native macOS app.
-
-## Understanding Battery Health
-
-### Health Percentage
-```
-Health % = (Current Maximum Capacity / Design Capacity) × 100
-```
-
-Example: 2028 mAh / 4382 mAh × 100 = 46.3% health
-
-### Temperature Conversion
-IORegistry stores temperatures in hundredths of Kelvin:
-```
-Temperature (°C) = (Raw Value - 2731.5) / 10
-```
-
-### Power Calculation
-```
-Power (W) = Voltage (V) × Current (A)
-```
-- Positive = Charging
-- Negative = Discharging
-
-### Health Status Ranges
-- **Excellent**: 90-100%
-- **Good**: 80-90%
-- **Fair**: 70-80%
-- **Poor**: 50-70%
-- **Very Poor**: Below 50%
+Please open a GitHub Issue once you've completed all of these steps and it still doesn't work
 
 ## Known Limitations
 
