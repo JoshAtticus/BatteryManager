@@ -9,11 +9,37 @@ import SwiftUI
 
 struct DetailsView: View {
     let batteryInfo: BatteryInfo
+    @StateObject private var macInfoService = MacInfoService()
     
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                DetailSection(title: "Device Information", icon: "info.circle.fill", color: .blue) {
+                DetailSection(title: "Mac Information", icon: "desktopcomputer", color: .blue) {
+                    DetailRow(label: "Name", value: macInfoService.macInfo.name)
+                    DetailRow(label: "Device Identifier", value: macInfoService.macInfo.identifier)
+                    if !macInfoService.macInfo.model.isEmpty {
+                        DetailRow(label: "Model", value: macInfoService.macInfo.model)
+                    }
+                    if !macInfoService.macInfo.modelDescription.isEmpty {
+                        DetailRow(label: "Model Number", value: macInfoService.macInfo.modelDescription)
+                    }
+                    DetailRow(label: "Serial", value: macInfoService.macInfo.serial)
+                    
+                    if !macInfoService.macInfo.chipDescription.isEmpty {
+                        DetailRow(label: "Chip", value: macInfoService.macInfo.chipDescription)
+                    }
+                    if !macInfoService.macInfo.chipPlatform.isEmpty {
+                        DetailRow(label: "Chip Platform", value: macInfoService.macInfo.chipPlatform)
+                    }
+                    DetailRow(label: "OS Version", value: macInfoService.macInfo.osVersion)
+                    DetailRow(label: "Thermal State", value: macInfoService.macInfo.thermalState)
+                    if !macInfoService.macInfo.logicBoardSerial.isEmpty {
+                        DetailRow(label: "Logic Board Serial", value: macInfoService.macInfo.logicBoardSerial)
+                    }
+                    DetailRow(label: "Time Since Last Reboot", value: macInfoService.macInfo.timeSinceLastReboot)
+                }
+                
+                DetailSection(title: "Battery Information", icon: "info.circle.fill", color: .blue) {
                     DetailRow(label: "Device Name", value: batteryInfo.deviceName)
                     DetailRow(label: "Serial Number", value: batteryInfo.serial)
                     if !batteryInfo.manufacturer.isEmpty {

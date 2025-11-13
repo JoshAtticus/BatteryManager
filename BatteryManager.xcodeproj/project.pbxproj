@@ -23,6 +23,8 @@
 		AA0000370000000000000001 /* iOSDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000380000000000000001 /* iOSDeviceInfo.swift */; };
 		AA0000390000000000000001 /* iOSDeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000400000000000000001 /* iOSDeviceService.swift */; };
 		AA0000410000000000000001 /* iOSDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000420000000000000001 /* iOSDeviceView.swift */; };
+		AA0000430000000000000001 /* MacInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000440000000000000001 /* MacInfo.swift */; };
+		AA0000450000000000000001 /* MacInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000460000000000000001 /* MacInfoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,8 @@
 		AA0000380000000000000001 /* iOSDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDeviceInfo.swift; sourceTree = "<group>"; };
 		AA0000400000000000000001 /* iOSDeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDeviceService.swift; sourceTree = "<group>"; };
 		AA0000420000000000000001 /* iOSDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDeviceView.swift; sourceTree = "<group>"; };
+		AA0000440000000000000001 /* MacInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInfo.swift; sourceTree = "<group>"; };
+		AA0000460000000000000001 /* MacInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			children = (
 				AA0000060000000000000001 /* BatteryInfo.swift */,
 				AA0000380000000000000001 /* iOSDeviceInfo.swift */,
+				AA0000440000000000000001 /* MacInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				AA0000080000000000000001 /* BatteryService.swift */,
 				0321CEFD2EC492F80073A3DB /* SharedBatteryData.swift */,
 				AA0000400000000000000001 /* iOSDeviceService.swift */,
+				AA0000460000000000000001 /* MacInfoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				AA0000390000000000000001 /* iOSDeviceService.swift in Sources */,
 				0321CF052EC49BBA0073A3DB /* LoginItemManager.swift in Sources */,
 				AA0000410000000000000001 /* iOSDeviceView.swift in Sources */,
+				AA0000430000000000000001 /* MacInfo.swift in Sources */,
+				AA0000450000000000000001 /* MacInfoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +275,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -330,6 +339,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -356,7 +366,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = M8DF5JY9LN;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -368,7 +378,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "Beta 2";
+				MARKETING_VERSION = "1.0 Beta";
 				PRODUCT_BUNDLE_IDENTIFIER = batterymanager.joshattic.us;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -385,7 +395,7 @@
 				CODE_SIGN_ENTITLEMENTS = BatteryManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = M8DF5JY9LN;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
@@ -397,7 +407,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "Beta 2";
+				MARKETING_VERSION = "1.0 Beta";
 				PRODUCT_BUNDLE_IDENTIFIER = batterymanager.joshattic.us;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
