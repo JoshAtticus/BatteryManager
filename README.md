@@ -2,6 +2,8 @@
 
 A beautiful, native macOS app for monitoring battery health on **Mac computers** and **connected iOS devices** (iPhone/iPad).
 
+<a href="https://www.buymeacoffee.com/joshatticus" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Requirements
 
 - macOS 12.4 or later
